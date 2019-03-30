@@ -17,9 +17,15 @@ public class CourseService implements ICourseService
         return (List<Course>)courseRepo.findAll();
     }
 
+    @Override
     public void save(Course course)
     {
         courseRepo.save(course);
     }
 
+    @Override
+    public Course getById(Long id)
+    {
+        return courseRepo.findById(id).orElse(null);
+    }
 }

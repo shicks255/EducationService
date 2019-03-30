@@ -4,6 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DatabaseTask
 {
@@ -35,6 +37,9 @@ public class DatabaseTask
             courseService.save(course2);
 
             System.out.println("Demo data created");
+
+            List<Course> courseList = courseService.findAll();
+            courseList.forEach(System.out::println);
         };
     }
 }

@@ -20,6 +20,12 @@ public class Course
     private String schoolYear = "";
     private Seasons season;
 
+    @Override
+    public String toString()
+    {
+        return String.format("%s - %s - %s - %s", id, courseCode, courseName, year);
+    }
+
 
     public long getId()
     {
