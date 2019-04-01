@@ -1,6 +1,7 @@
-package com.steven.hicks;
+package com.steven.hicks.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.steven.hicks.entities.Course;
+import com.steven.hicks.repositories.CourseService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,11 +14,9 @@ import java.util.List;
 public class CourseController
 {
     public CourseService m_courseService;
-    public ObjectMapper  m_objectMapper;
 
-    public CourseController(CourseService service, ObjectMapper mapper)
+    public CourseController(CourseService service)
     {
-        this.m_objectMapper = mapper;
         this.m_courseService = service;
     }
 

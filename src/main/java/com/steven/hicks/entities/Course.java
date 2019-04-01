@@ -1,9 +1,8 @@
-package com.steven.hicks;
+package com.steven.hicks.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Course
@@ -12,13 +11,17 @@ public class Course
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String schoolId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private School school;
     private String courseCode = "";
     private String courseName = "";
     private String grade = "";
     private int year;
     private String schoolYear = "";
     private Seasons season;
+
+    @OneToMany(mappedBy = "course")
+    private List<Coursework> coursework = new ArrayList<>();
 
     @Override
     public String toString()
@@ -35,16 +38,6 @@ public class Course
     public void setId(long id)
     {
         this.id = id;
-    }
-
-    public String getSchoolId()
-    {
-        return schoolId;
-    }
-
-    public void setSchoolId(String schoolId)
-    {
-        this.schoolId = schoolId;
     }
 
     public String getCourseCode()
@@ -105,5 +98,15 @@ public class Course
     public void setSeason(Seasons season)
     {
         this.season = season;
+    }
+
+    public School getSchool()
+    {
+        return school;
+    }
+
+    public void setSchool(School school)
+    {
+        this.school = school;
     }
 }

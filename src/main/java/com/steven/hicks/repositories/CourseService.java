@@ -1,29 +1,32 @@
-package com.steven.hicks;
+package com.steven.hicks.repositories;
 
+import com.steven.hicks.entities.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CourseService implements ICourseService
+public class CourseService
 {
-    @Autowired
     private CourseRepository courseRepo;
 
-    @Override
+    @Autowired
+    public CourseService(CourseRepository repo)
+    {
+        courseRepo = repo;
+    }
+
     public List<Course> findAll()
     {
         return (List<Course>)courseRepo.findAll();
     }
 
-    @Override
     public void save(Course course)
     {
         courseRepo.save(course);
     }
 
-    @Override
     public Course getById(Long id)
     {
         return courseRepo.findById(id).orElse(null);

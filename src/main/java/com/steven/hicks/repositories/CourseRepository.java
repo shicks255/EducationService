@@ -1,5 +1,6 @@
-package com.steven.hicks;
+package com.steven.hicks.repositories;
 
+import com.steven.hicks.entities.Course;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
