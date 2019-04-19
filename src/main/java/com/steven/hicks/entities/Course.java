@@ -20,8 +20,8 @@ public class Course
     private String schoolYear = "";
     private Seasons season;
 
-//    @OneToMany(mappedBy = "course", fetch = FetchType.EAGER)
-    @OneToMany
+    @OneToMany()
+    @JoinColumn(name = "courseId")
     private List<Coursework> coursework = new ArrayList<>();
 
     @Override
