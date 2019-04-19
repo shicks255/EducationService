@@ -20,7 +20,8 @@ public class Course
     private String schoolYear = "";
     private Seasons season;
 
-    @OneToMany(mappedBy = "course")
+//    @OneToMany(mappedBy = "course", fetch = FetchType.EAGER)
+    @OneToMany
     private List<Coursework> coursework = new ArrayList<>();
 
     @Override
@@ -108,5 +109,15 @@ public class Course
     public void setSchool(School school)
     {
         this.school = school;
+    }
+
+    public List<Coursework> getCoursework()
+    {
+        return coursework;
+    }
+
+    public void setCoursework(List<Coursework> coursework)
+    {
+        this.coursework = coursework;
     }
 }

@@ -2,10 +2,7 @@ package com.steven.hicks.controllers;
 
 import com.steven.hicks.entities.Course;
 import com.steven.hicks.repositories.CourseService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,8 +17,8 @@ public class CourseController
         this.m_courseService = service;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "")
-    public Course getCourse(@RequestParam(name = "id")Long id)
+    @GetMapping("/{courseId}")
+    public Course getCourse(@PathVariable(name = "courseId")Long id)
     {
         Course course = m_courseService.getById(id);
         if (course != null)
@@ -30,7 +27,7 @@ public class CourseController
         return null;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/search")
+    @GetMapping(value = "/search")
     public List<Course> searchCourses()
     {
         List<Course> courseList = m_courseService.findAll();
