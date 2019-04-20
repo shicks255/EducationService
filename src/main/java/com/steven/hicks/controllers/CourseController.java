@@ -34,6 +34,10 @@ public class CourseController
         return courseList;
     }
 
-
+    @GetMapping("")
+    public List<Course> getAllCourses()
+    {
+        return m_courseService.findAll();
+    }
 
 }

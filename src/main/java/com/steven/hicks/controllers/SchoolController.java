@@ -5,25 +5,31 @@ import com.steven.hicks.repositories.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
+import java.util.List;
 
 @RestController
 @RequestMapping("/school")
 public class SchoolController
 {
-    private SchoolService schoolService;
+    private SchoolService m_schoolService;
 
     @Autowired
     public SchoolController(SchoolService schoolService)
     {
-        this.schoolService = schoolService;
+        this.m_schoolService = schoolService;
     }
 
     @GetMapping("/{acronim}")
     public School getSchool(@PathVariable String acronim)
     {
-        School school = schoolService.getByAcronim(acronim);
+        School school = m_schoolService.getByAcronim(acronim);
         return school;
+    }
+
+    @GetMapping("")
+    public List<School> getAllSchools()
+    {
+        return m_schoolService.findAll();
     }
 
 }

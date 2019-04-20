@@ -11,13 +11,10 @@ public class Coursework
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name="course_id")
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id")
     @JsonIgnoreProperties("coursework")
     private Course course;
-//    private Long courseId;
     private String name = "";
     private String description = "";
 
@@ -40,16 +37,6 @@ public class Coursework
     {
         this.course = course;
     }
-
-//    public Long getCourseId()
-//    {
-//        return courseId;
-//    }
-//
-//    public void setCourseId(Long courseId)
-//    {
-//        this.courseId = courseId;
-//    }
 
     public String getName()
     {
