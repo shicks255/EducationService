@@ -1,5 +1,7 @@
 package com.steven.hicks.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,14 +16,14 @@ public class Course
     @ManyToOne(fetch = FetchType.EAGER)
     private School school;
     private String courseCode = "";
-    private String courseName = "";
+    private String courseName = "course";
     private String grade = "";
     private int year;
     private String schoolYear = "";
     private Seasons season;
 
-    @OneToMany()
-    @JoinColumn(name = "courseId")
+    @OneToMany(mappedBy = "")
+    @JsonIgnoreProperties("course")
     private List<Coursework> coursework = new ArrayList<>();
 
     @Override

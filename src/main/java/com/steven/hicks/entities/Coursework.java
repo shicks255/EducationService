@@ -1,5 +1,7 @@
 package com.steven.hicks.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,8 +13,11 @@ public class Coursework
 
 //    @ManyToOne(fetch = FetchType.EAGER)
 //    @JoinColumn(name="course_id")
-//    private Course course;
-    private Long courseId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "course_id")
+    @JsonIgnoreProperties("coursework")
+    private Course course;
+//    private Long courseId;
     private String name = "";
     private String description = "";
 
@@ -26,26 +31,25 @@ public class Coursework
         this.id = id;
     }
 
-//    public Course getCourse()
+    public Course getCourse()
+    {
+        return course;
+    }
+
+    public void setCourse(Course course)
+    {
+        this.course = course;
+    }
+
+//    public Long getCourseId()
 //    {
-//        return course;
+//        return courseId;
 //    }
 //
-//    public void setCourse(Course course)
+//    public void setCourseId(Long courseId)
 //    {
-//        this.course = course;
+//        this.courseId = courseId;
 //    }
-
-
-    public Long getCourseId()
-    {
-        return courseId;
-    }
-
-    public void setCourseId(Long courseId)
-    {
-        this.courseId = courseId;
-    }
 
     public String getName()
     {

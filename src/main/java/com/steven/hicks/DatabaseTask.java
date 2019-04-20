@@ -38,7 +38,7 @@ public class DatabaseTask
             course1.setSchoolYear("2007-2008");
             course1.setSeason(Seasons.FALL);
             course1.setYear(2007);
-//            courseService.save(course1);
+            courseService.save(course1);
 
             Course course2 = new Course();
             course2.setCourseCode("MATH 222");
@@ -51,7 +51,8 @@ public class DatabaseTask
             courseService.save(course2);
 
             Coursework coursework = new Coursework();
-//            coursework.setCourse(course1);
+            coursework.setCourse(course1);
+//            coursework.setCourseId(1l);
             coursework.setDescription("test");
             coursework.setName("test paper");
             courseworkService.save(coursework);
