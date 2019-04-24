@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(uniqueConstraints=@UniqueConstraint(columnNames = {"year","season","courseName"}))
 public class Course
 {
     @Id
@@ -19,7 +20,6 @@ public class Course
     private String courseName = "course";
     private String grade = "";
     private int year;
-    private String schoolYear = "";
     private Seasons season;
 
     @OneToMany(mappedBy = "")
@@ -31,7 +31,6 @@ public class Course
     {
         return String.format("%s - %s - %s - %s", id, courseCode, courseName, year);
     }
-
 
     public long getId()
     {
@@ -81,16 +80,6 @@ public class Course
     public void setYear(int year)
     {
         this.year = year;
-    }
-
-    public String getSchoolYear()
-    {
-        return schoolYear;
-    }
-
-    public void setSchoolYear(String schoolYear)
-    {
-        this.schoolYear = schoolYear;
     }
 
     public Seasons getSeason()

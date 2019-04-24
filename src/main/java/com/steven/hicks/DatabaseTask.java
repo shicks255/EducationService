@@ -1,9 +1,6 @@
 package com.steven.hicks;
 
-import com.steven.hicks.entities.Course;
-import com.steven.hicks.entities.Coursework;
 import com.steven.hicks.entities.School;
-import com.steven.hicks.entities.Seasons;
 import com.steven.hicks.repositories.CourseService;
 import com.steven.hicks.repositories.CourseworkService;
 import com.steven.hicks.repositories.SchoolService;
@@ -29,36 +26,6 @@ public class DatabaseTask
             rsc.setAcronim("RSC");
             rsc.setFullName("Richard Stockton College");
             schoolService.save(rsc);
-
-            Course course1 = new Course();
-            course1.setCourseCode("ANTH 101");
-            course1.setCourseName("Intro to Cultural Anthropology");
-            course1.setGrade("C");
-            course1.setSchool(rvcc);
-            course1.setSchoolYear("2007-2008");
-            course1.setSeason(Seasons.FALL);
-            course1.setYear(2007);
-            courseService.save(course1);
-
-            Course course2 = new Course();
-            course2.setCourseCode("MATH 222");
-            course2.setCourseName("Statistics I");
-            course2.setGrade("B+");
-            course2.setSchool(rvcc);
-            course2.setSchoolYear("2007-2008");
-            course2.setSeason(Seasons.FALL);
-            course2.setYear(2007);
-            courseService.save(course2);
-
-            Coursework coursework = new Coursework();
-            coursework.setCourse(course1);
-//            coursework.setCourseId(1l);
-            coursework.setDescription("test");
-            coursework.setName("test paper");
-            courseworkService.save(coursework);
-
-            course1.getCoursework().add(coursework);
-            courseService.save(course1);
 
             System.out.println("Demo data created");
         };
