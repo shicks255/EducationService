@@ -1,0 +1,522 @@
+[
+	{
+		"school" : "RVCC",
+		"courseCode" : "ANTH 101",
+		"courseName" : "INTRO TO CULTURAL ANTHROPOLOGY",
+		"grade" : "C",
+		"semester" : "2007Fall",
+		"semesterTrackingNumber" : 200703
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "ENGL",
+		"courseName" : "ENGLISH I",
+		"grade" : "B+",
+		"semester" : "2007Fall",
+		"semesterTrackingNumber" : 200703
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "HIST",
+		"courseName" : "WORLD CIVILIZATION I",
+		"grade" : "B+",
+		"semester" : "2007Fall",
+		"semesterTrackingNumber" : 200703
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "MATH 222",
+		"courseName" : "STATISTICS I",
+		"grade" : "C",
+		"semester" : "2007Fall",
+		"semesterTrackingNumber" : 200703
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "ARTS 267",
+		"courseName" : "VIDEO PRODUCTION I",
+		"grade" : "B",
+		"semester" : "2008Spring",
+		"semesterTrackingNumber" : 200801
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CRMJ 101",
+		"courseName" : "INTRO TO CRIMINAL JUSTICE",
+		"grade" : "B+",
+		"semester" : "2008Spring",
+		"semesterTrackingNumber" : 200703
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "ENGL 112",
+		"courseName" : "ENGLISH II",
+		"grade" : "C",
+		"semester" : "2008Spring",
+		"semesterTrackingNumber" : 200801
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "SOCI 101",
+		"courseName" : "INTRO TO SOCIOLOGY",
+		"grade" : "F",
+		"semester" : "2008Spring",
+		"semesterTrackingNumber" : 200801
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "BUSI 111",
+		"courseName" : "INTRO TO BUS ADMINISTRATION",
+		"grade" : "D",
+		"semester" : "2008Fall",
+		"semesterTrackingNumber" : 200803
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 122",
+		"courseName" : "INTRO TO INFORMATION SYSTEMS",
+		"grade" : "C+",
+		"semester" : "2008Fall",
+		"semesterTrackingNumber" : 200803
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "MRKT 101",
+		"courseName" : "PRINCIPLES OF MARKETING",
+		"grade" : "B+",
+		"semester" : "2008Fall",
+		"semesterTrackingNumber" : 200803
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "MUSC 101",
+		"courseName" : "FUNDAMENTALS OF MUSIC",
+		"grade" : "C+",
+		"semester" : "2008Fall",
+		"semesterTrackingNumber" : 200803
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "COMM 102",
+		"courseName" : "Intro to Communication Theory",
+		"grade" : "B",
+		"semester" : "2009Spring",
+		"semesterTrackingNumber" : 200901
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "HIST 201",
+		"courseName" : "US HISTORY BEGINNINGS TO 1877",
+		"grade" : "F",
+		"semester" : "2009Spring",
+		"semesterTrackingNumber" : 200901
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "D",
+		"courseName" : "CURRENT MORAL & SOCIAL ISSUES",
+		"grade" : "D",
+		"semester" : "2009Spring",
+		"semesterTrackingNumber" : 200901
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "PSYC 103",
+		"courseName" : "INTRO TO PSYCHOLOGY",
+		"grade" : "C",
+		"semester" : "2009Spring",
+		"semesterTrackingNumber" : 200901
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CHEM 103",
+		"courseName" : "GEN. CHEMISTRY",
+		"grade" : "W",
+		"semester" : "2009Fall",
+		"semesterTrackingNumber" : 200903
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "ENGR 105",
+		"courseName" : "INTRO TO ENGINEERING",
+		"grade" : "W",
+		"semester" : "2009Fall",
+		"semesterTrackingNumber" : 200903
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "HIST 201",
+		"courseName" : "US HISTORY BEGINNINGS TO 1877",
+		"grade" : "B",
+		"semester" : "2009Fall",
+		"semesterTrackingNumber" : 200903
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "SOCI 101",
+		"courseName" : "INTRO TO SOCIOLOGY",
+		"grade" : "D",
+		"semester" : "2009Fall",
+		"semesterTrackingNumber" : 200903
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CRMJ 232",
+		"courseName" : "CRIMINAL LAW",
+		"grade" : "W",
+		"semester" : "2010Spring",
+		"semesterTrackingNumber" : 201001
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "HIST 202",
+		"courseName" : "US HISTORY 1877 TO PRESENT",
+		"grade" : "A",
+		"semester" : "2010Spring",
+		"semesterTrackingNumber" : 201001
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "PHIL 114",
+		"courseName" : "ETHICS",
+		"grade" : "B+",
+		"semester" : "2010Spring",
+		"semesterTrackingNumber" : 201001
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "POLI 121",
+		"courseName" : "AMERICAN GOVERNMENT & POLITICS",
+		"grade" : "B",
+		"semester" : "2010Spring",
+		"semesterTrackingNumber" : 201001
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "BIOL 111",
+		"courseName" : "PRINCIPLES OF BIOLOGY",
+		"grade" : "B",
+		"semester" : "2010Spring",
+		"semesterTrackingNumber" : 201001
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "SPAN 103",
+		"courseName" : "INTRO TO SPANISH I",
+		"grade" : "A",
+		"semester" : "2010Summer",
+		"semesterTrackingNumber" : 201002
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "ARTH 101",
+		"courseName" : "ART APPRECIATION",
+		"grade" : "A",
+		"semester" : "2010Fall",
+		"semesterTrackingNumber" : 201003
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "COMM 110",
+		"courseName" : "INTERPERSONAL COMMUNICATION",
+		"grade" : "B",
+		"semester" : "2010Fall",
+		"semesterTrackingNumber" : 201003
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "ENGL 222",
+		"courseName" : "AMERICAN LIT: POST CIV WAR TO PRESENT",
+		"grade" : "B+",
+		"semester" : "2010Fall",
+		"semesterTrackingNumber" : 201003
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "FITN 142",
+		"courseName" : "ELEMENTS OF PHYSICAL FITNESS",
+		"grade" : "B",
+		"semester" : "2010Fall",
+		"semesterTrackingNumber" : 201003
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "ENGL 211",
+		"courseName" : "MASTERPIECES OF EARLY WORLD LIT",
+		"grade" : "B",
+		"semester" : "2011Spring",
+		"semesterTrackingNumber" : 201101
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "PHYS 120",
+		"courseName" : "INTRODUCTION TO ASTRONOMY",
+		"grade" : "A",
+		"semester" : "2011Spring",
+		"semesterTrackingNumber" : 201101
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "SPAN 104",
+		"courseName" : "INTRO TO SPANISH II",
+		"grade" : "A",
+		"semester" : "2011Spring",
+		"semesterTrackingNumber" : 201101
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 103",
+		"courseName" : "COMPUTER CONCEPTS & PROGRAMMING",
+		"grade" : "A",
+		"semester" : "2014Summer",
+		"semesterTrackingNumber" : 201402
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 132",
+		"courseName" : "SYSTEMS ANALYSIS & DESIGN",
+		"grade" : "A",
+		"semester" : "2014Fall",
+		"semesterTrackingNumber" : 201403
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 217",
+		"courseName" : "OPERATING SYSTEMS",
+		"grade" : "A",
+		"semester" : "2014Fall",
+		"semesterTrackingNumber" : 201403
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 225",
+		"courseName" : "WEB PAGE DEVELOPMENT I",
+		"grade" : "A",
+		"semester" : "2015Spring",
+		"semesterTrackingNumber" : 201501
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 232",
+		"courseName" : "INTERNET AND WEB ARCHITECTURE",
+		"grade" : "A",
+		"semester" : "2015Spring",
+		"semesterTrackingNumber" : 201501
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 219",
+		"courseName" : "NETWORKING ESSENTIALS",
+		"grade" : "A",
+		"semester" : "2015Summer",
+		"semesterTrackingNumber" : 201502
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 222",
+		"courseName" : "CONTENT MANAGEMENT SYSTEMS",
+		"grade" : "A",
+		"semester" : "2015Fall",
+		"semesterTrackingNumber" : 201503
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 268",
+		"courseName" : "WEB PAGE DEVELOPMENT II",
+		"grade" : "A",
+		"semester" : "2015Fall",
+		"semesterTrackingNumber" : 201503
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 285",
+		"courseName" : "DATABSE DEV & DESIGN",
+		"grade" : "B+",
+		"semester" : "2015Fall",
+		"semesterTrackingNumber" : 201503
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 254",
+		"courseName" : "DATA STRUCTURES",
+		"grade" : "A",
+		"semester" : "2016Spring",
+		"semesterTrackingNumber" : 201601
+	},
+	{
+		"school" : "RVCC",
+		"courseCode" : "CISY 211",
+		"courseName" : "SYSTEMS DEV & IMPLEMENTATION",
+		"grade" : "B+",
+		"semester" : "2016Summer",
+		"semesterTrackingNumber" : 201602
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "GNM 2274",
+		"courseName" : "MATHEMATICS AND POLITICS",
+		"grade" : "A-",
+		"semester" : "2011Fall",
+		"semesterTrackingNumber" : 201103
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "GSS 2144",
+		"courseName" : "INTRODUCTION TO ISLAM",
+		"grade" : "A-",
+		"semester" : "2011Fall",
+		"semesterTrackingNumber" : 201103
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "HIST 2149",
+		"courseName" : "CONFLICT AND CHANGE IN INDIA",
+		"grade" : "A",
+		"semester" : "2011Fall",
+		"semesterTrackingNumber" : 201103
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "LANG 2140",
+		"courseName" : "SPANISH: READING KNOWLEDGE I",
+		"grade" : "B+",
+		"semester" : "2011Fall",
+		"semesterTrackingNumber" : 201103
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "GAH",
+		"courseName" : "SURVEY OF WESTERN ART",
+		"grade" : "A-",
+		"semester" : "2012Spring",
+		"semesterTrackingNumber" : 201201
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "HIST 2406",
+		"courseName" : "THE MIDDLE AGES",
+		"grade" : "A",
+		"semester" : "2012Spring",
+		"semesterTrackingNumber" : 201201
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "HIST 4658",
+		"courseName" : "ADV. HISTORY SEMINAR : IDENTITY",
+		"grade" : "A",
+		"semester" : "2012Spring",
+		"semesterTrackingNumber" : 201201
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "LANG 2141",
+		"courseName" : "SPANISH: READING KNOWLEDGE II",
+		"grade" : "A",
+		"semester" : "2012Spring",
+		"semesterTrackingNumber" : 201201
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "POLS 3641",
+		"courseName" : "MODERN POLITICAL THEORY",
+		"grade" : "A-",
+		"semester" : "2012Spring",
+		"semesterTrackingNumber" : 201201
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "GIS 3305",
+		"courseName" : "ENERGY AND ETHICS",
+		"grade" : "A",
+		"semester" : "2012Summer",
+		"semesterTrackingNumber" : 201202
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "GIS 3725",
+		"courseName" : "WOMEN IN LAW, HIST & LIT",
+		"grade" : "B",
+		"semester" : "2012Summer",
+		"semesterTrackingNumber" : 201202
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "HIST 3100",
+		"courseName" : "THE VIETNAM WAR",
+		"grade" : "A",
+		"semester" : "2012Summer",
+		"semesterTrackingNumber" : 201202
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "HIST 4899",
+		"courseName" : "HIST SUMMER RESEARCH EXPERIENCE",
+		"grade" : "A",
+		"semester" : "2012Summer",
+		"semesterTrackingNumber" : 201202
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "HIST 4655",
+		"courseName" : "ADV. HISTORY SEMINAR: POWER",
+		"grade" : "A-",
+		"semester" : "2012Fall",
+		"semesterTrackingNumber" : 201203
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "HIST 4690",
+		"courseName" : "HISTORICAL METHODS",
+		"grade" : "A-",
+		"semester" : "2012Fall",
+		"semesterTrackingNumber" : 201203
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "LANG 3240",
+		"courseName" : "ADV. ORAL AND WRITTEN EXPRESSION SPANISH",
+		"grade" : "A",
+		"semester" : "2012Fall",
+		"semesterTrackingNumber" : 201203
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "LANG 3244",
+		"courseName" : "LITERARY ANALYSIS IN SPANISH",
+		"grade" : "B+",
+		"semester" : "2012Fall",
+		"semesterTrackingNumber" : 201203
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "POLS 3123",
+		"courseName" : "JUDICIAL PROCESS",
+		"grade" : "A",
+		"semester" : "2012Fall",
+		"semesterTrackingNumber" : 201203
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "HIST 3609",
+		"courseName" : "HELLENISM: MEMORY & IDENTITY",
+		"grade" : "A",
+		"semester" : "2013Spring",
+		"semesterTrackingNumber" : 201301
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "HIST 4691",
+		"courseName" : "THESIS SEMINAR",
+		"grade" : "A-",
+		"semester" : "2013Spring",
+		"semesterTrackingNumber" : 201301
+	},
+	{
+		"school" : "RSC",
+		"courseCode" : "LANG 3241",
+		"courseName" : "ADV. COMPOSITION AND SYNTAX SPANISH",
+		"grade" : "C+",
+		"semester" : "2013Spring",
+		"semesterTrackingNumber" : 201301
+	}
+]
