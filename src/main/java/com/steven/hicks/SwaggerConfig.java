@@ -33,6 +33,6 @@ public class SwaggerConfig
 
     private ApiInfo apiInfo()
     {
-        return new ApiInfo("Steve's Education Service", "Education info", "2.0", "", new Contact("steve hicks", "", ""), "", "", Collections.emptyList());
+        return new ApiInfo("Steve's Education Service", "Education info", "2.0", "", new Contact("Steven Hicks", "shicks255.com", ""), "", "", Collections.emptyList());
     }
 }

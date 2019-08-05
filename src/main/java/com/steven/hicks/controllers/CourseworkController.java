@@ -2,6 +2,7 @@ package com.steven.hicks.controllers;
 
 import com.steven.hicks.entities.Coursework;
 import com.steven.hicks.repositories.CourseworkService;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/coursework")
+@Api(value = "Coursework", tags = {"Coursework"})
 public class CourseworkController
 {
     public CourseworkService m_courseworkService;

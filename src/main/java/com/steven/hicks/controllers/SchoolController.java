@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/schools")
-@Api(value = "schools")
+@RequestMapping("/school")
+@Api(value = "School", tags = {"School"})
 public class SchoolController
 {
     private SchoolService m_schoolService;

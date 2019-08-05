@@ -5,6 +5,8 @@ import com.steven.hicks.entities.School;
 import com.steven.hicks.entities.Seasons;
 import com.steven.hicks.repositories.CourseService;
 import com.steven.hicks.repositories.SchoolService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,7 @@ import java.util.Map;
 @RestController()
 @RequestMapping("/course")
 @CrossOrigin
+@Api(value = "Course", tags = {"Course"})
 public class CourseController
 {
     public CourseService m_courseService;
@@ -27,6 +30,7 @@ public class CourseController
     }
 
     @GetMapping("/{courseId}")
+    @ApiOperation(value = "Get course by courseId")
     public Course getCourse(@PathVariable(name = "courseId")Long id)
     {
         Course course = m_courseService.getById(id);
@@ -50,7 +54,7 @@ public class CourseController
     }
 
     @PostMapping("")
-    public void addCourse(@RequestBody Map<String, Object> [] courseData)
+    public Course addCourse(@RequestBody Map<String, Object> [] courseData)
     {
         for (Map<String, Object> course : courseData)
         {
@@ -78,9 +82,11 @@ public class CourseController
                 newCourse.setSchool(school);
 
             m_courseService.save(newCourse);
+
+            return newCourse;
         }
 
-        System.out.println(courseData);
+        return null;
     }
 
 }
