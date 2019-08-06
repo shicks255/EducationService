@@ -7,20 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(uniqueConstraints=@UniqueConstraint(columnNames = {"year","season","courseName"}))
+@Table
 public class Course
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @EmbeddedId
+    private CourseId courseId;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private School school;
-    private String courseCode = "";
     private String courseName = "course";
     private String grade = "";
-    private int year;
-    private Seasons season;
 
     @OneToMany(mappedBy = "")
     @JsonIgnoreProperties("course")
@@ -29,27 +25,18 @@ public class Course
     @Override
     public String toString()
     {
-        return String.format("%s - %s - %s - %s", id, courseCode, courseName, year);
+//        return String.format("%s - %s - %s - %s", courseName, );
+        return "";
     }
 
-    public long getId()
+    public CourseId getCourseId()
     {
-        return id;
+        return courseId;
     }
 
-    public void setId(long id)
+    public void setCourseId(CourseId courseId)
     {
-        this.id = id;
-    }
-
-    public String getCourseCode()
-    {
-        return courseCode;
-    }
-
-    public void setCourseCode(String courseCode)
-    {
-        this.courseCode = courseCode;
+        this.courseId = courseId;
     }
 
     public String getCourseName()
@@ -70,26 +57,6 @@ public class Course
     public void setGrade(String grade)
     {
         this.grade = grade;
-    }
-
-    public int getYear()
-    {
-        return year;
-    }
-
-    public void setYear(int year)
-    {
-        this.year = year;
-    }
-
-    public Seasons getSeason()
-    {
-        return season;
-    }
-
-    public void setSeason(Seasons season)
-    {
-        this.season = season;
     }
 
     public School getSchool()

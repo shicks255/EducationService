@@ -11,8 +11,12 @@ public class Coursework
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "course_id")
+    @ManyToOne
+    @JoinColumns({
+            @JoinColumn(name = "year", referencedColumnName = "year"),
+            @JoinColumn(name = "season", referencedColumnName = "season"),
+            @JoinColumn(name = "courseCode", referencedColumnName = "courseCode")
+    })
     @JsonIgnoreProperties("coursework")
     private Course course;
     private String name = "";

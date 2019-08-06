@@ -1,6 +1,7 @@
 package com.steven.hicks.controllers;
 
 import com.steven.hicks.entities.Course;
+import com.steven.hicks.entities.CourseId;
 import com.steven.hicks.entities.School;
 import com.steven.hicks.entities.Seasons;
 import com.steven.hicks.repositories.CourseService;
@@ -59,24 +60,27 @@ public class CourseController
         for (Map<String, Object> course : courseData)
         {
             Course newCourse = new Course();
-            newCourse.setCourseCode("" + course.get("courseCode"));
+            CourseId courseId = new CourseId();
+            courseId.setCourseCode("" + course.get("courseCode"));
             newCourse.setCourseName("" + course.get("courseName"));
             newCourse.setGrade("" + course.get("grade"));
 
             String semester = "" + course.get("semester");
             int year = Integer.parseInt(semester.substring(0,4));
-            newCourse.setYear(year);
+            courseId.setYear(year);
             String season = semester.substring(4);
 
             if (season.equals("Spring"))
-                newCourse.setSeason(Seasons.SPRING);
+                courseId.setSeason(Seasons.SPRING);
             if (season.equals("Winter"))
-                newCourse.setSeason(Seasons.WINTER);
+                courseId.setSeason(Seasons.WINTER);
             if (season.equals("Fall"))
-                newCourse.setSeason(Seasons.FALL);
+                courseId.setSeason(Seasons.FALL);
             if (season.equals("Summer"))
-                newCourse.setSeason(Seasons.SUMMER);
+                courseId.setSeason(Seasons.SUMMER);
 
+
+            newCourse.setCourseId(courseId);
             School school = m_schoolService.getByAcronim("" + course.get("school"));
             if (school != null)
                 newCourse.setSchool(school);
