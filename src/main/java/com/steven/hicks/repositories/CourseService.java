@@ -31,4 +31,9 @@ public class CourseService
     {
         return courseRepo.findById(id).orElse(null);
     }
+
+    public Course getByYearAndSeasonAndCourseCode(int year, int season, String courseCode)
+    {
+        return courseRepo.findByCourseIdYearAndCourseIdSeasonAndCourseIdCourseCode(year, season, courseCode);
+    }
 }

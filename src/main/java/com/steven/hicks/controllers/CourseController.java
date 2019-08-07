@@ -30,11 +30,14 @@ public class CourseController
         this.m_schoolService = schoolService;
     }
 
-    @GetMapping("/{courseId}")
+    @GetMapping("/course")
     @ApiOperation(value = "Get course by courseId")
-    public Course getCourse(@PathVariable(name = "courseId")Long id)
+    public Course getCourse(
+            @RequestParam(name = "year") int year,
+            @RequestParam(name = "season") int season,
+            @RequestParam(name = "courseCode") String courseCode)
     {
-        Course course = m_courseService.getById(id);
+        Course course = m_courseService.getByYearAndSeasonAndCourseCode(year, season, courseCode);
         if (course != null)
             return course;
 
