@@ -29,7 +29,7 @@ public class SchoolService
 
     public School getByAcronim(String acronim)
     {
-        return repo.findById(acronim).orElse(null);
+        return repo.findByAcronimIgnoreCase(acronim).orElse(null);
     }
 
 }
