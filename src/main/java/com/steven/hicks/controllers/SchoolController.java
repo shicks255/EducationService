@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RestController
@@ -30,20 +31,10 @@ public class SchoolController
     @ApiOperation(value = "Get school by school Acronim", notes = "acronyms are case sensitive")
     public School getSchool(@PathVariable String acronim) throws InvalidParamException
     {
-        boolean bad = true;
-
-        try{
-            Integer.parseInt(acronim);
-        }
-        catch (Exception e)
-        {
-            bad = false;
-        }
-
-        if (bad)
-            throw new InvalidParamException("The parameter type is incorrect");
-
         School school = m_schoolService.getByAcronim(acronim);
+        if (school == null)
+            throw new EntityNotFoundException("Entity not found.");
+
         return school;
     }
 

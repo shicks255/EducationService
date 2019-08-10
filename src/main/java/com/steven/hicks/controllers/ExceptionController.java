@@ -11,16 +11,17 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import javax.persistence.EntityNotFoundException;
+
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
 public class ExceptionController extends ResponseEntityExceptionHandler
 {
-//    @Override
-//    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request)
-//    {
-//        String error = "something bad";
-//        return new ResponseEntity<>(new InvalidParamError(error), status);
-//    }
+    @ExceptionHandler(EntityNotFoundException.class)
+    protected ResponseEntity<Object> handleEntityNotFoundError(RuntimeException e, WebRequest request)
+    {
+        return handleExceptionInternal(e, e.getMessage(), new HttpHeaders(), HttpStatus.CONFLICT, request);
+    }
 
     @ExceptionHandler(InvalidParamException.class)
     protected ResponseEntity<Object> handleInvalidParamError(RuntimeException e, WebRequest request)
