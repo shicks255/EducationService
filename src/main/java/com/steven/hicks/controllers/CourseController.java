@@ -48,13 +48,35 @@ public class CourseController
     @GetMapping("")
     public List<Course> getAllCourses(
             @RequestParam(name = "Course Code", required = false) String courseCode,
-            @RequestParam(name = "Semester", required = false) Integer semester,
+            @RequestParam(name = "Season", required = false) Integer season,
             @RequestParam(name = "Year", required = false) Integer year,
             @RequestParam(name = "Name", required = false) String courseName,
             @RequestParam(name = "Grade", required = false) String grade,
             @RequestParam(name = "School", required = false) String school)
     {
-        return m_courseService.findAll();
+        List<Course> courses =  m_courseService.findAll();
+
+        courses.removeIf(x -> {
+            CourseId id = x.getCourseId();
+            if (courseCode != null)
+                if (!courseCode.equalsIgnoreCase(id.getCourseCode()))
+                    return true;
+            if (season != null)
+                if (id.getSeason().getSeq() != season)
+                    return true;
+            if (year != null)
+                return id.getYear() != year;
+            if (courseName != null)
+                return !courseName.equalsIgnoreCase(x.getCourseName());
+            if (grade != null)
+                return !x.getGrade().equalsIgnoreCase(grade);
+            if (school != null)
+                return !x.getSchool().equals(school);
+
+            return false;
+        });
+
+        return courses;
     }
 
     @PostMapping("")
