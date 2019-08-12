@@ -1,8 +1,13 @@
 package com.steven.hicks.exceptions;
 
-public class EntityNotFoundException
+public class EntityNotFoundException extends Throwable
 {
     private String message = "";
+
+    public EntityNotFoundException(String message)
+    {
+        this.message = message;
+    }
 
     public String getMessage()
     {

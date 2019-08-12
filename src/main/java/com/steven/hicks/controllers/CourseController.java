@@ -4,6 +4,7 @@ import com.steven.hicks.entities.Course;
 import com.steven.hicks.entities.CourseId;
 import com.steven.hicks.entities.School;
 import com.steven.hicks.entities.Seasons;
+import com.steven.hicks.exceptions.EntityNotFoundException;
 import com.steven.hicks.repositories.CourseService;
 import com.steven.hicks.repositories.SchoolService;
 import io.swagger.annotations.Api;
@@ -35,24 +36,23 @@ public class CourseController
     public Course getCourse(
             @RequestParam(name = "year") int year,
             @RequestParam(name = "season") int season,
-            @RequestParam(name = "courseCode") String courseCode)
+            @RequestParam(name = "courseCode") String courseCode) throws EntityNotFoundException
     {
         Course course = m_courseService.getByYearAndSeasonAndCourseCode(year, season, courseCode);
         if (course != null)
             return course;
 
-        return null;
-    }
-
-    @GetMapping(value = "/search")
-    public List<Course> searchCourses()
-    {
-        List<Course> courseList = m_courseService.findAll();
-        return courseList;
+        throw new EntityNotFoundException("Entity not found");
     }
 
     @GetMapping("")
-    public List<Course> getAllCourses()
+    public List<Course> getAllCourses(
+            @RequestParam(name = "Course Code", required = false) String courseCode,
+            @RequestParam(name = "Semester", required = false) Integer semester,
+            @RequestParam(name = "Year", required = false) Integer year,
+            @RequestParam(name = "Name", required = false) String courseName,
+            @RequestParam(name = "Grade", required = false) String grade,
+            @RequestParam(name = "School", required = false) String school)
     {
         return m_courseService.findAll();
     }

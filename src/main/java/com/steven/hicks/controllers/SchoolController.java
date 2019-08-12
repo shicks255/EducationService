@@ -1,6 +1,7 @@
 package com.steven.hicks.controllers;
 
 import com.steven.hicks.entities.School;
+import com.steven.hicks.exceptions.EntityNotFoundException;
 import com.steven.hicks.exceptions.InvalidParamException;
 import com.steven.hicks.repositories.SchoolService;
 import io.swagger.annotations.Api;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RestController
@@ -29,8 +29,9 @@ public class SchoolController
 
     @GetMapping("/{acronim}")
     @ApiOperation(value = "Get school by school Acronim", notes = "acronyms are case sensitive")
-    public School getSchool(@PathVariable String acronim) throws InvalidParamException
+    public School getSchool(@PathVariable String acronim) throws EntityNotFoundException
     {
+
         School school = m_schoolService.getByAcronim(acronim);
         if (school == null)
             throw new EntityNotFoundException("Entity not found.");
