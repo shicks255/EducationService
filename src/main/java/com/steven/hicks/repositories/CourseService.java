@@ -36,4 +36,9 @@ public class CourseService
     {
         return courseRepo.findByCourseIdYearAndCourseIdSeasonAndCourseIdCourseCode(year, season, courseCode);
     }
+
+    public List<Course> findBySeasons(int season)
+    {
+        return courseRepo.find(season);
+    }
 }

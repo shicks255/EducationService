@@ -1,7 +1,6 @@
 package com.steven.hicks.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -11,7 +10,7 @@ public class CourseId implements Serializable
     @Column
     private int year;
 
-    @Column
+    @Enumerated
     private Seasons season;
 
     @Column
@@ -63,4 +62,20 @@ public class CourseId implements Serializable
     {
         this.courseCode = courseCode;
     }
+
+//    @Converter(autoApply = true)
+//    public static class SeasonConverter implements AttributeConverter<Seasons, Integer>
+//    {
+//        @Override
+//        public Integer convertToDatabaseColumn(Seasons season)
+//        {
+//            return season.getSeq();
+//        }
+//
+//        @Override
+//        public Seasons convertToEntityAttribute(Integer code)
+//        {
+//            return Seasons.getSeasonsFromValue(code);
+//        }
+//    }
 }

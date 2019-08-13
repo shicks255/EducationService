@@ -38,11 +38,15 @@ public class CourseController
             @RequestParam(name = "season") int season,
             @RequestParam(name = "courseCode") String courseCode) throws EntityNotFoundException
     {
-        Course course = m_courseService.getByYearAndSeasonAndCourseCode(year, season, courseCode);
-        if (course != null)
-            return course;
+//        Course course = m_courseService.getByYearAndSeasonAndCourseCode(year, season, courseCode);
+        List<Course> courses = m_courseService.findBySeasons(1);
+//        if (course != null)
+//            return course;
 
-        throw new EntityNotFoundException("Entity not found");
+        if (courses.isEmpty())
+            throw new EntityNotFoundException("Entity not found");
+
+        return null;
     }
 
     @GetMapping("")
