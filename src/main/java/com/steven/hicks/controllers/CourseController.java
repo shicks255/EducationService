@@ -32,18 +32,19 @@ public class CourseController
     }
 
     @GetMapping("/course")
-    @ApiOperation(value = "Get course by courseId")
+    @ApiOperation(value = "Get course by courseId", notes = "Seasons are: </br>Winter - 0 <br/>Spring - 1 <br/> Summer - 2 <br/> Fall - 3")
     public Course getCourse(
             @RequestParam(name = "year") int year,
             @RequestParam(name = "season") int season,
             @RequestParam(name = "courseCode") String courseCode) throws EntityNotFoundException
     {
-//        Course course = m_courseService.getByYearAndSeasonAndCourseCode(year, season, courseCode);
-        List<Course> courses = m_courseService.findBySeasons(1);
-//        if (course != null)
-//            return course;
+        CourseId id = new CourseId();
+        id.setYear(year);
+        id.setSeason(Seasons.getSeasonsFromValue(season));
+        id.setCourseCode(courseCode);
 
-        if (courses.isEmpty())
+        Course course = m_courseService.getById(id);
+        if (course == null)
             throw new EntityNotFoundException("Entity not found");
 
         return null;

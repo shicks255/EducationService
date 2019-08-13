@@ -1,6 +1,7 @@
 package com.steven.hicks.repositories;
 
 import com.steven.hicks.entities.Course;
+import com.steven.hicks.entities.CourseId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,18 +28,8 @@ public class CourseService
         courseRepo.save(course);
     }
 
-    public Course getById(Long id)
+    public Course getById(CourseId id)
     {
         return courseRepo.findById(id).orElse(null);
-    }
-
-    public Course getByYearAndSeasonAndCourseCode(int year, int season, String courseCode)
-    {
-        return courseRepo.findByCourseIdYearAndCourseIdSeasonAndCourseIdCourseCode(year, season, courseCode);
-    }
-
-    public List<Course> findBySeasons(int season)
-    {
-        return courseRepo.find(season);
     }
 }
