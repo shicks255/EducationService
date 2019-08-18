@@ -1,9 +1,6 @@
 package com.steven.hicks.controllers;
 
-import com.steven.hicks.entities.Course;
-import com.steven.hicks.entities.CourseId;
-import com.steven.hicks.entities.School;
-import com.steven.hicks.entities.Seasons;
+import com.steven.hicks.entities.*;
 import com.steven.hicks.exceptions.EntityNotFoundException;
 import com.steven.hicks.repositories.CourseService;
 import com.steven.hicks.repositories.SchoolService;
@@ -13,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController()
 @RequestMapping("/course")
@@ -85,42 +81,28 @@ public class CourseController
     }
 
     @PostMapping("")
-    public Course addCourse(@RequestBody Map<String, Object> [] courseData)
+    @ApiOperation(value = "addCourse", response = CourseDTO.class)
+    public Course addCourse(@RequestBody CourseDTO courseData)
     {
-        for (Map<String, Object> course : courseData)
-        {
-            Course newCourse = new Course();
-            CourseId courseId = new CourseId();
-            courseId.setCourseCode("" + course.get("courseCode"));
-            newCourse.setCourseName("" + course.get("courseName"));
-            newCourse.setGrade("" + course.get("grade"));
+        Course newCourse = new Course();
+        CourseId courseId = new CourseId();
+        courseId.setCourseCode(courseData.getCourseCode());
+        newCourse.setCourseName(courseData.getCourseName());
+        newCourse.setGrade(courseData.getGrade());
 
-            String semester = "" + course.get("semester");
-            int year = Integer.parseInt(semester.substring(0,4));
-            courseId.setYear(year);
-            String season = semester.substring(4);
+        Integer season = courseData.getSeasonCode();
+        courseId.setSeason(Seasons.getSeasonsFromValue(season));
+        Integer year = courseData.getYear();
+        courseId.setYear(year);
 
-            if (season.equals("Spring"))
-                courseId.setSeason(Seasons.SPRING);
-            if (season.equals("Winter"))
-                courseId.setSeason(Seasons.WINTER);
-            if (season.equals("Fall"))
-                courseId.setSeason(Seasons.FALL);
-            if (season.equals("Summer"))
-                courseId.setSeason(Seasons.SUMMER);
+        newCourse.setCourseId(courseId);
+        School school = m_schoolService.getByAcronim(courseData.getSchool());
+        if (school != null)
+            newCourse.setSchool(school);
 
+        m_courseService.save(newCourse);
 
-            newCourse.setCourseId(courseId);
-            School school = m_schoolService.getByAcronim("" + course.get("school"));
-            if (school != null)
-                newCourse.setSchool(school);
-
-            m_courseService.save(newCourse);
-
-            return newCourse;
-        }
-
-        return null;
+        return newCourse;
     }
 
 }
