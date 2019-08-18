@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table
@@ -19,14 +20,28 @@ public class Course
     private String grade = "";
 
     @OneToMany(mappedBy = "")
-    @JsonIgnoreProperties("course")
+//    @JsonIgnoreProperties("course")
     private List<Coursework> coursework = new ArrayList<>();
 
     @Override
     public String toString()
     {
-//        return String.format("%s - %s - %s - %s", courseName, );
-        return "";
+        return String.format("%s - %s - %s", courseId.getCourseCode(), courseId.getSeason(), courseId.getYear());
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return courseId.equals(course.courseId);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(courseId);
     }
 
     public CourseId getCourseId()

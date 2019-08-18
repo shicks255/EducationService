@@ -2,7 +2,6 @@ package com.steven.hicks.controllers;
 
 import com.steven.hicks.entities.School;
 import com.steven.hicks.exceptions.EntityNotFoundException;
-import com.steven.hicks.exceptions.InvalidParamException;
 import com.steven.hicks.repositories.SchoolService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,7 +33,7 @@ public class SchoolController
 
         School school = m_schoolService.getByAcronim(acronim);
         if (school == null)
-            throw new EntityNotFoundException("Entity not found.");
+            throw new EntityNotFoundException("School not found.");
 
         return school;
     }

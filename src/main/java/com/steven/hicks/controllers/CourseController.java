@@ -45,9 +45,9 @@ public class CourseController
 
         Course course = m_courseService.getById(id);
         if (course == null)
-            throw new EntityNotFoundException("Entity not found");
+            throw new EntityNotFoundException("Course not found");
 
-        return null;
+        return course;
     }
 
     @GetMapping("")
@@ -76,7 +76,7 @@ public class CourseController
             if (grade != null)
                 return !x.getGrade().equalsIgnoreCase(grade);
             if (school != null)
-                return !x.getSchool().equals(school);
+                return !x.getSchool().getAcronim().equals(school);
 
             return false;
         });
