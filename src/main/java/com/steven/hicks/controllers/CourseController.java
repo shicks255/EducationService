@@ -66,13 +66,17 @@ public class CourseController
                 if (id.getSeason().getSeq() != season)
                     return true;
             if (year != null)
-                return id.getYear() != year;
+                if (id.getYear() != year)
+                    return true;
             if (courseName != null)
-                return !courseName.equalsIgnoreCase(x.getCourseName());
+                if (!courseName.equalsIgnoreCase(x.getCourseName()))
+                    return true;
             if (grade != null)
-                return !x.getGrade().equalsIgnoreCase(grade);
+                if (!x.getGrade().equalsIgnoreCase(grade))
+                    return true;
             if (school != null)
-                return !x.getSchool().getAcronim().equals(school);
+                if (!x.getSchool().getAcronim().equalsIgnoreCase(school))
+                    return true;
 
             return false;
         });
