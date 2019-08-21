@@ -1,5 +1,7 @@
 package com.steven.hicks.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -17,7 +19,7 @@ public class Coursework
             @JoinColumn(name = "season", referencedColumnName = "season"),
             @JoinColumn(name = "courseCode", referencedColumnName = "courseCode")
     })
-    @JsonIgnoreProperties("coursework")
+    @JsonBackReference
     private Course course;
     private String description = "";
     private String fileName = "";
