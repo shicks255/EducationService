@@ -3,10 +3,7 @@ package com.steven.hicks.controllers;
 import com.steven.hicks.entities.Coursework;
 import com.steven.hicks.repositories.CourseworkService;
 import io.swagger.annotations.Api;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +35,10 @@ public class CourseworkController
         return m_courseworkService.findAll();
     }
 
+//    @PostMapping("")
+//    public Coursework addCoursework()
+//    {
+//
+//    }
 
 }

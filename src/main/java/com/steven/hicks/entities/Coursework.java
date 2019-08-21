@@ -11,7 +11,7 @@ public class Coursework
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumns({
             @JoinColumn(name = "year", referencedColumnName = "year"),
             @JoinColumn(name = "season", referencedColumnName = "season"),
@@ -19,8 +19,8 @@ public class Coursework
     })
     @JsonIgnoreProperties("coursework")
     private Course course;
-    private String name = "";
     private String description = "";
+    private String fileName = "";
 
     public long getId()
     {
@@ -42,16 +42,6 @@ public class Coursework
         this.course = course;
     }
 
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
     public String getDescription()
     {
         return description;
@@ -60,5 +50,15 @@ public class Coursework
     public void setDescription(String description)
     {
         this.description = description;
+    }
+
+    public String getFileName()
+    {
+        return fileName;
+    }
+
+    public void setFileName(String fileName)
+    {
+        this.fileName = fileName;
     }
 }

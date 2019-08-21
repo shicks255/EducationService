@@ -17,7 +17,7 @@ public class Course
     private String courseName = "course";
     private String grade = "";
 
-    @OneToMany(mappedBy = "")
+    @OneToMany(mappedBy = "", fetch = FetchType.EAGER)
 //    @JsonIgnoreProperties("course")
     private List<Coursework> coursework = new ArrayList<>();
 

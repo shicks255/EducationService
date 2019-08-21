@@ -1,9 +1,6 @@
 package com.steven.hicks;
 
-import com.steven.hicks.entities.Course;
-import com.steven.hicks.entities.CourseId;
-import com.steven.hicks.entities.School;
-import com.steven.hicks.entities.Seasons;
+import com.steven.hicks.entities.*;
 import com.steven.hicks.repositories.CourseService;
 import com.steven.hicks.repositories.CourseworkService;
 import com.steven.hicks.repositories.SchoolService;
@@ -71,6 +68,43 @@ public class DatabaseTask
 
                 courseService.save(newCourse);
             }
+
+            System.out.println("Course Objects created");
+            System.out.println("Creating Coursework Objects");
+
+            Resource courseworkMap = resourceLoader.getResource("classpath:files/courseworkMap.csv");
+            File courseworkMapFile = courseworkMap.getFile();
+
+            CSVParser courseworkParser = new CSVParser(Files.newBufferedReader(courseworkMapFile.toPath()), CSVFormat.DEFAULT.withFirstRecordAsHeader());
+            for (CSVRecord record : courseworkParser)
+            {
+                String courseCode = record.get(0);
+                Integer year = Integer.parseInt(record.get(1));
+                Integer season = Integer.parseInt(record.get(2));
+
+                CourseId courseId = new CourseId();
+                courseId.setYear(year);
+                courseId.setCourseCode(courseCode);
+                courseId.setSeason(Seasons.getSeasonsFromValue(season));
+
+                Course course = courseService.getById(courseId);
+                if (course != null)
+                {
+                    Coursework coursework = new Coursework();
+                    coursework.setCourse(course);
+
+                    String fileName = record.get(3);
+                    String description = record.get(4);
+                    coursework.setFileName(fileName);
+                    coursework.setDescription(description);
+
+                    course.getCoursework().add(coursework);
+                    courseworkService.save(coursework);
+                    courseService.save(course);
+                   }
+            }
+
+            System.out.println("Data processing finished");
         };
     }
 }
