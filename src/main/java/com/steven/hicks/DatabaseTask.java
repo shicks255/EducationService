@@ -7,6 +7,8 @@ import com.steven.hicks.repositories.SchoolService;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
@@ -26,8 +28,10 @@ public class DatabaseTask
                                             CourseworkService courseworkService,
                                             ResourceLoader resourceLoader) throws IOException
     {
+        Logger logger = LoggerFactory.getLogger(DatabaseTask.class);
         return args -> {
-            System.out.println("Setting up dummy data");
+            logger.info("Setting up dummy data");
+
 
             School rvcc = new School();
             rvcc.setAcronim("RVCC");
@@ -38,7 +42,7 @@ public class DatabaseTask
             rsc.setAcronim("RSC");
             rsc.setFullName("Richard Stockton College");
             schoolService.save(rsc);
-            System.out.println("School Objects created");
+            logger.info("School Objects created");
 
             Resource resource = resourceLoader.getResource("classpath:files/courseList.csv");
             File file = resource.getFile();
@@ -69,8 +73,8 @@ public class DatabaseTask
                 courseService.save(newCourse);
             }
 
-            System.out.println("Course Objects created");
-            System.out.println("Creating Coursework Objects");
+            logger.info("Course Objects created");
+            logger.info("Creating Coursework Objects");
 
             Resource courseworkMap = resourceLoader.getResource("classpath:files/courseworkMap.csv");
             File courseworkMapFile = courseworkMap.getFile();
@@ -101,10 +105,10 @@ public class DatabaseTask
                     course.getCoursework().add(coursework);
                     courseworkService.save(coursework);
                     courseService.save(course);
-                   }
+                }
             }
 
-            System.out.println("Data processing finished");
+            logger.info("Data processing finished");
         };
     }
 }
