@@ -7,9 +7,14 @@ import com.steven.hicks.repositories.SchoolService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController()
 @RequestMapping("/course")
@@ -48,6 +53,8 @@ public class CourseController
 
     @GetMapping("")
     public List<Course> getAllCourses(
+            @RequestParam(name = "Page", required = true) int page,
+            @RequestParam(name = "Size", required = true) int size,
             @RequestParam(name = "Course Code", required = false) String courseCode,
             @RequestParam(name = "Season", required = false) Integer season,
             @RequestParam(name = "Year", required = false) Integer year,
@@ -55,33 +62,34 @@ public class CourseController
             @RequestParam(name = "Grade", required = false) String grade,
             @RequestParam(name = "School", required = false) String school)
     {
-        List<Course> courses =  m_courseService.findAll();
+        Pageable pageable = new PageRequest(page, size, Sort.by("grade"));
+        Page<Course> courses =  m_courseService.findAll(pageable);
 
-        courses.removeIf(x -> {
+        List<Course> courseList = courses.stream().filter(x -> {
             CourseId id = x.getCourseId();
             if (courseCode != null)
                 if (!courseCode.equalsIgnoreCase(id.getCourseCode()))
-                    return true;
+                    return false;
             if (season != null)
                 if (id.getSeason().getSeq() != season)
-                    return true;
+                    return false;
             if (year != null)
                 if (id.getYear() != year)
-                    return true;
+                    return false;
             if (courseName != null)
                 if (!courseName.equalsIgnoreCase(x.getCourseName()))
-                    return true;
+                    return false;
             if (grade != null)
                 if (!x.getGrade().equalsIgnoreCase(grade))
-                    return true;
+                    return false;
             if (school != null)
                 if (!x.getSchool().getAcronim().equalsIgnoreCase(school))
-                    return true;
+                    return false;
 
-            return false;
-        });
+            return true;
+        }).collect(Collectors.toList());
 
-        return courses;
+        return courseList;
     }
 
     @PostMapping("")

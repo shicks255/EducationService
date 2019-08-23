@@ -3,14 +3,14 @@ package com.steven.hicks.repositories;
 import com.steven.hicks.entities.Course;
 import com.steven.hicks.entities.CourseId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class CourseService
 {
-    private CourseRepository courseRepo;
+    private CourseRepository courseRepo;`` ``
 
     @Autowired
     public CourseService(CourseRepository repo)
@@ -18,9 +18,10 @@ public class CourseService
         courseRepo = repo;
     }
 
-    public List<Course> findAll()
+    public Page<Course> findAll(Pageable pageable)
     {
-        return (List<Course>)courseRepo.findAll();
+//        return (List<Course>)courseRepo.findAll();
+        return courseRepo.findAll(pageable);
     }
 
     public void save(Course course)
