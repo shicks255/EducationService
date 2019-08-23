@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CourseService
 {
-    private CourseRepository courseRepo;`` ``
+    private CourseRepository courseRepo;
 
     @Autowired
     public CourseService(CourseRepository repo)
@@ -20,7 +20,6 @@ public class CourseService
 
     public Page<Course> findAll(Pageable pageable)
     {
-//        return (List<Course>)courseRepo.findAll();
         return courseRepo.findAll(pageable);
     }
 
